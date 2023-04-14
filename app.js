@@ -1,3 +1,5 @@
+
+
 // Selecting the copy message button, password display, and copy failed display from the DOM
 const copyMsgEl = document.querySelector("[copyMsgBtn]");
 const passwordDisplayEl = document.querySelector("[passwordDisplay]");
@@ -187,5 +189,14 @@ function generatePassword() {
 
 // Add event listener for generate password button
 generatePasswordEl.addEventListener("click", generatePassword);
+//Example
+function homeOne() {
+    hPoints++
+    homePoints.textContent = hPoints
+}
+
+window.homeOne = homeOne
+
+// Expose the rest of the functions to the window object
 
 

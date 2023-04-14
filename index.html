@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="w-screen h-screen flex justify-center items-center bg-gradLinear">
+        <!-- container -->
+        <div class="w-11/12 max-w-[28.125rem] flex flex-col gap-5 items-center justify-center">
+            <!-- heading -->
+            <h1 class="font-Spartan text-[2rem] leading-[2.375rem] font-semibold tracking-[2px] text-white uppercase opacity-70 text-center">password generator</h1>
+            <!-- password-displayer -->
+            <div class="w-full flex justify-between items-center p-5 bg-dkViolet-0 rounded-xl border-b-[0.35rem] border-ltViolet2-0">
+                <input disabled passwordDisplay readonly value="PASSWORD" class="select-none bg-transparent font-Spartan text-2xl text-vbYellow-0 tracking-[1px] font-semibold opacity-70">
+                <div class="relative">
+                    <p copyFailedDisplay class="tooltip"></p>
+                    <button copyMsgBtn><img class="w-6 h-6" src="images/copy.svg" alt=""></button>
+                </div>
+            </div>
+            <!-- main -->
+            <div class="w-full flex flex-col gap-6 bg-dkViolet-0 p-8 rounded-lg">
+                <!-- length-and-slider-container -->
+                <div class="space-y-5">
+                    <!-- length-displayer -->
+                    <div class="flex justify-between">
+                        <p class="font-Spartan text-2xl font-normal text-white">Password Length</p>
+                        <span class="font-Spartan text-2xl font-medium text-vbYellow-0" sliderDisplay>14</span>
+                    </div>
+                    <!-- slider -->
+                    <div class="w-full">
+                        <input class="w-full slider" slider type="range" min="1" max="20" value="10" step="1">
+                    </div>
+                </div>
+
+                <!-- checkboxes-container -->
+                <div class="flex flex-col gap-2 mt-1">
+                    <!-- uppercase -->
+                    <div class="flex items-center gap-4">
+                        <input class="appearance-none w-5 h-5 border border-vbCyan-0 cursor-pointer relative checked:before:absolute checked:before:inset-0 checked:before:left-0.5 rounded-md checked:bg-vbCyan-0 checked:before:content-['✔'] checked:before:font-Spartan checked:before:text-[1.05rem] checked:before:font-semibold" type="checkbox" name="" id="uppercase" upCheckbox>
+                        <labe class="font-Spartan text-xl font-normal text-white tracking-wide" for="uppercase">Include Uppercase Letters</label>
+                    </div>
+                    <!-- uppercase -->
+                    <div class="flex items-center gap-4">
+                        <input class="appearance-none w-5 h-5 border border-vbCyan-0 cursor-pointer relative checked:before:absolute checked:before:inset-0 checked:before:left-0.5 rounded-md checked:bg-vbCyan-0 checked:before:content-['✔'] checked:before:font-Spartan checked:before:text-[1.05rem] checked:before:font-semibold" type="checkbox" name="" id="lowercase" lowChechbox>
+                        <label class="font-Spartan text-xl font-normal text-white tracking-wide" for="lowercase">Include Lowercase Letters</label>
+                    </div>
+                    <!-- number -->
+                    <div class="flex items-center gap-4">
+                        <input class="appearance-none w-5 h-5 border border-vbCyan-0 cursor-pointer relative checked:before:absolute checked:before:inset-0 checked:before:left-0.5 rounded-md checked:bg-vbCyan-0 checked:before:content-['✔'] checked:before:font-Spartan checked:before:text-[1.05rem] checked:before:font-semibold" type="checkbox" name="" id="number" numCheckbox>
+                        <label class="font-Spartan text-xl font-normal text-white tracking-wide" for="number">Include Numbers</label>
+                    </div>
+                    <!-- symbols -->
+                    <div class="flex items-center gap-4">
+                        <input class="appearance-none w-5 h-5 border border-vbCyan-0 cursor-pointer relative checked:before:absolute checked:before:inset-0 checked:before:left-0.5 rounded-md checked:bg-vbCyan-0 checked:before:content-['✔'] checked:before:font-Spartan checked:before:text-[1.05rem] checked:before:font-semibold" type="checkbox" name="" id="symbols" symCheckbox>
+                        <label class="font-Spartan text-xl font-normal text-white tracking-wide" for="symbols">Include Symbols</label>
+                    </div>
+                </div>
+
+                <!-- strength-container -->
+                <div class="flex justify-between items-center">
+                    <p class="font-Spartan text-2xl font-normal text-plWhite-0">Strength</p>
+                    <div data-indicator class="w-6 h-6 rounded-full"></div>
+                </div>
+
+                <!-- generate-button -->
+                <button generatePasswordBtn class="font-Spartan text-xl font-semibold text-vbYellow-0 py-4 bg-[#BC15F4] uppercase border-b-[0.3rem] border-vbYellow-0 rounded-xl tracking-[1px]" >Generate Password</button>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
